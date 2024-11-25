@@ -1,13 +1,16 @@
 <div class="container bg-gray-100 min-h-screen flex items-center justify-center">
-  <h1>Calculadora de Horas Diárias</h1>
-  <form>
+  <div class="bg-white shadow-lg rounded-lg p-6 max-w-md">
+
+
+  <h1 class="font-extrabold text-lg text-blue-600">Calculadora de Horas Diárias</h1>
+  <form class="space-y-4">
     <div>
-      <label class="text-blue-600 font-bold">Entrada:</label>
-      <input type="time" [(ngModel)]="hours.entrada" name="entrada" placeholder="Entrada">
-      <label>Saída para Almoço:</label>
-      <input type="time" [(ngModel)]="hours.saidaAlmoco" name="saidaAlmoco" placeholder="Saída para Almoço">
-      <label>Volta do Almoço:</label>
-      <input type="time" [(ngModel)]="hours.voltaAlmoco" name="voltaAlmoco" placeholder="Volta do Almoço">
+      <label class=" block  font-bold text-gray-700">Entrada:</label>
+      <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" type="time" [(ngModel)]="hours.entrada" name="entrada" placeholder="Entrada">
+      <label class=" block  font-bold text-gray-700" >Saída para Almoço:</label>
+      <input class="block  font-bold text-gray-700" type="time" [(ngModel)]="hours.saidaAlmoco" name="saidaAlmoco" placeholder="Saída para Almoço">
+      <label class=" block  font-bold text-gray-700">Volta do Almoço:</label>
+      <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" type="time" [(ngModel)]="hours.voltaAlmoco" name="voltaAlmoco" placeholder="Volta do Almoço">
     </div>
     <button type="button" (click)="calcularHorarioSaida()">Calcular Horário de Saída</button>
   </form>
@@ -17,12 +20,12 @@
   <button type="button" (click)="ativarNotificacao()">Ativar Notificação</button>
   <p *ngIf="notificacaoAtivada">Notificação ativada para {{ horarioSaida }}</p>
 
+  <div class="container">
+    <button (click)="mostrarNotificacao()">Exibir Toast</button>
+  </div>
 </div>
 
-<div class="container">
-  <h1>Teste do Toastr</h1>
-  <button (click)="mostrarNotificacao()">Exibir Toast</button>
-</div>
+
 
 
 <router-outlet />
